@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Button = () => {
-  return <button className="btn">Get Weather</button>;
+const Button = (props) => {
+  return <button className="btn" onClick={props.clicked}>Get Weather</button>;
 };
 
 export default Button;

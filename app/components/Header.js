@@ -8,8 +8,11 @@ export default class Header extends Component {
       <div className="header">
         <h1>Rainy Dayz</h1>
         <div>
-          <Input />
-          <Button />
+          <Input
+            textTyped={this.props.textTyped}
+            inputText={this.props.inputText}
+          />
+          <Button clicked={this.props.clicked} />
         </div>
       </div>
     );

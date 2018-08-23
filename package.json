@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/ReactjsProgram/react-fundamentals-curriculum#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^15.5.3",
     "react-dom": "^15.5.3"
   },
