@@ -9,7 +9,7 @@ export function getWeatherInfo(city) {
       `http://api.openweathermap.org/data/2.5/weather?q=${chosenCity}&type=accurate&APPID=${API_KEY}`
     )
     .then(response => {
-      response.data;
+      console.log(response.data);
     })
     .catch(error => {
       console.log(error);

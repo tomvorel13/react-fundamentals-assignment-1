@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
-import Input from './Input';
-import Button from './Button';
+import React from 'react';
 
-export default class Header extends Component {
-  render() {
-    return (
-      <div className="header">
-        <h1>Rainy Dayz</h1>
-        <div>
-          <Input
-            textTyped={this.props.textTyped}
-            inputText={this.props.inputText}
-          />
-          <Button clicked={this.props.clicked} />
-        </div>
+export default props => {
+  return (
+    <div className="header">
+      <h1>Rainy Dayz</h1>
+      <div>
+        <input
+          type="text"
+          className="mainInput"
+          placeholder="Brno, Czech Republic"
+          value={props.inputText}
+          onChange={props.textTyped}
+        />
+        <button className="btn" onClick={props.clicked}>
+          Get Weather
+        </button>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};

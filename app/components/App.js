@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import Body from './Body';
+import Forecast from './Forecast';
+import { ReactRouter, Switch, BrowserRouter, Route } from 'react-router-dom';
 import { getWeatherInfo, get5dayForecast } from '../utils/api';
 
 class App extends React.Component {
@@ -25,18 +27,31 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="main-wrapper">
-        <Header
-          clicked={this.logText}
-          textTyped={this.inputTextHandler}
-          inputText={this.state.inputText}
-        />
-        <Body
-          clicked={this.logText}
-          textTyped={this.inputTextHandler}
-          inputText={this.state.inputText}
-        />
-      </div>
+      <BrowserRouter>
+        <div className="main-wrapper">
+          <Route
+            render={props => (
+              <Header
+                clicked={this.logText}
+                textTyped={this.inputTextHandler}
+                inputText={this.state.inputText}
+              />
+            )}
+          />
+          <Route
+            path="/"
+            exact
+            render={props => (
+              <Body
+                clicked={this.logText}
+                textTyped={this.inputTextHandler}
+                inputText={this.state.inputText}
+              />
+            )}
+          />
+          <Route path="/forecast" render={props => <Forecast />} />
+        </div>
+      </BrowserRouter>
     );
   }
 }
