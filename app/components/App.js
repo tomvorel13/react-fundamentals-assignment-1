@@ -38,18 +38,20 @@ class App extends React.Component {
               />
             )}
           />
-          <Route
-            path="/"
-            exact
-            render={props => (
-              <Body
-                clicked={this.logText}
-                textTyped={this.inputTextHandler}
-                inputText={this.state.inputText}
-              />
-            )}
-          />
-          <Route path="/forecast" render={props => <Forecast />} />
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={props => (
+                <Body
+                  clicked={this.logText}
+                  textTyped={this.inputTextHandler}
+                  inputText={this.state.inputText}
+                />
+              )}
+            />
+            <Route path="/forecast" render={props => <Forecast />} />
+          </Switch>
         </div>
       </BrowserRouter>
     );
